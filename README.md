@@ -137,18 +137,82 @@ They are retained to document the development history of the numerical model but
 
 The project has been developed primarily using:
 
-- Python
-- OpenMC 0.15.0
+- Python 3.13
+- OpenMC 0.15.3-based development environment
 - NumPy
 - Pandas
 - Matplotlib
-- Jupyter Notebook
+- h5py
+- Pillow
+- IPython / ipykernel
 - WSL / Ubuntu
 - VS Code
 
-The main nuclear data library used in the current calculations is **ENDF/B-VII.1**.
+The main nuclear data library used in the calculations is based on **ENDF/B-VII.1**.
 
-OpenMC nuclear data files are not included in this repository.
+Detailed dependency information is provided in `environment.yml` and `requirements.txt`.
+
+## Installation
+
+The recommended way to reproduce the Python/OpenMC environment is to use Conda.
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Ahzzzzzzz/SZU-MNSR-Opt.git
+cd SZU-MNSR-Opt
+```
+
+Create the Conda environment:
+
+```bash
+conda env create -f environment.yml
+conda activate szu-mnsr-opt
+```
+
+The current development environment is based on:
+
+- Python 3.13
+- OpenMC 0.15.3
+- NumPy
+- Pandas
+- Matplotlib
+- h5py
+- Pillow
+- IPython
+- ipykernel
+
+The original research environment used a development build of OpenMC derived from the 0.15.3 codebase. For reproducibility and portability, `environment.yml` specifies the stable `openmc=0.15.3` release rather than the local development build.
+
+### Nuclear Data
+
+OpenMC nuclear data are **not included** in this repository.
+
+The calculations in this project use an ENDF/B-VII.1-based OpenMC cross-section library. Users must install a compatible OpenMC nuclear data library separately and configure the `OPENMC_CROSS_SECTIONS` environment variable.
+
+For example:
+
+```bash
+export OPENMC_CROSS_SECTIONS=/path/to/cross_sections.xml
+```
+
+The exact path depends on the local installation and should not be hard-coded into the repository.
+
+### Python-only Dependencies
+
+The Python-level dependencies are also listed in:
+
+```text
+requirements.txt
+```
+
+They can be installed with:
+
+```bash
+pip install -r requirements.txt
+```
+
+However, this does **not** install OpenMC itself or the required nuclear data library. For full reproduction of the computational environment, `environment.yml` is the recommended setup method.
 
 ## Generated Files
 
