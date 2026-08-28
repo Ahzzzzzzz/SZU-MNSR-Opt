@@ -1,0 +1,50 @@
+# OpenMC build directories and simulation results
+build/
+results/
+statepoint.*.h5
+summary.h5
+*.h5
+
+# OpenMC-generated XML inputs
+materials.xml
+geometry.xml
+settings.xml
+tallies.xml
+plots.xml
+cross_sections.xml
+
+# Python and Jupyter caches
+__pycache__/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor and IDE settings
+.vscode/
+.idea/
+
+# Secrets and local environment configuration
+.env
+.env.*
+
+# Logs, temporary files, backups, and editor recovery files
+*.log
+*.out
+*.tmp
+*.bak
+*~
+*.save
+
+# Unpublished manuscript files
+*.doc
+*.docx
+
+# Local one-off scratch files
+/1
+/Untitled-1.py
+
+# Legacy research notebooks kept locally for now
+legacy/
