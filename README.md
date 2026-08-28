@@ -3,7 +3,7 @@
 Parametric OpenMC modeling and dummy-element layout optimization for the Shenzhen University Miniature Neutron Source Reactor (MNSR-SZ).
 
 > **Project status:** Undergraduate research project.  
-> This repository is currently private and contains unpublished research code.
+> This repository contains research code for an ongoing undergraduate project.
 
 ## Overview
 
@@ -14,6 +14,8 @@ A parametric reactor model is developed using **OpenMC**, and a **genetic algori
 The primary optimization objective is radial fuel-pin power flattening. Additional quantities, including effective multiplication factor, reactivity, neutron-flux distribution, and central control-rod worth, are evaluated for selected candidate configurations.
 
 The project focuses on relative neutronic comparison within a unified numerical model rather than high-precision prediction of absolute reactor safety parameters.
+
+
 
 ## Research Workflow
 
